@@ -1,0 +1,44 @@
+{
+  "name": "cs2-typescript-addon-template",
+  "version": "1.0.0",
+  "description": "Counter-Strike 2 TypeScript Addon Template - A starter template for creating CS2 addons with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist ../scripts/*",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "cs2",
+    "counter-strike-2",
+    "cs_script",
+    "source2",
+    "workshop",
+    "modding",
+    "typescript",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nyx000/cs2-typescript-addon-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nyx000/cs2-typescript-addon-template/issues"
+  },
+  "homepage": "https://github.com/Nyx000/cs2-typescript-addon-template#readme"
+}
+

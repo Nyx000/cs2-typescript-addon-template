@@ -1,0 +1,158 @@
+{
+  "folders": [
+    {
+      "name": "🎮 Addon Root",
+      "path": "."
+    },
+    {
+      "name": "💻 Development Source",
+      "path": "dev"
+    },
+    {
+      "name": "📜 Compiled Scripts",
+      "path": "scripts"
+    },
+    {
+      "name": "🗺️ Maps",
+      "path": "maps"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.git": true,
+      "**/postprocess": true
+    },
+    "files.associations": {
+      "*.vscript": "javascript",
+      "*.vts": "typescript",
+      "*.vmap": "xml"
+    },
+    "typescript.tsdk": "dev/node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.eol": "\n",
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/postprocess": true,
+      "**/soundevents": true,
+      "**/sounds": true,
+      "**/*.js.map": true,
+      "**/*.d.ts": true
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/postprocess/**": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.wordWrap": "on"
+    },
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "editor.rulers": [80, 120],
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": true
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-typescript-next",
+      "usernamehw.errorlens",
+      "streetsidesoftware.code-spell-checker"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🔧 Watch TypeScript (Dev Mode)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "watch"],
+        "cwd": "${workspaceFolder:💻 Development Source}",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build TypeScript",
+        "type": "npm",
+        "script": "build",
+        "path": "dev/",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$tsc"],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Watch TypeScript",
+        "type": "npm",
+        "script": "watch",
+        "path": "dev/",
+        "isBackground": true,
+        "problemMatcher": ["$tsc-watch"],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Clean Build",
+        "type": "npm",
+        "script": "clean",
+        "path": "dev/",
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Lint TypeScript",
+        "type": "npm",
+        "script": "lint",
+        "path": "dev/",
+        "problemMatcher": ["$eslint-compact"],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Format Code",
+        "type": "npm",
+        "script": "format",
+        "path": "dev/",
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      }
+    ]
+  }
+}
