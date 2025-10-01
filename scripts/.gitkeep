@@ -1,0 +1,5 @@
+# This file ensures the scripts directory is tracked by Git
+# Compiled JavaScript files from dev/src/scripts/ will be placed here automatically
+# This directory will contain subdirectories like scripts/ and types/ after building
+
+

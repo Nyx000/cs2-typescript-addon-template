@@ -1,7 +1,8 @@
 # CS2 TypeScript Addon Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7+-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![CS2](https://img.shields.io/badge/CS2-Workshop%20Tools-orange.svg)](https://developer.valvesoftware.com/wiki/Counter-Strike_2_Workshop_Tools)
 
 A modern, production-ready template for creating Counter-Strike 2 addons with TypeScript. This template provides a complete development environment with hot reload support, comprehensive type definitions, and best practices for CS2 scripting.
@@ -40,23 +41,58 @@ cd my-cs2-addon
 
 Or click "Use this template" on GitHub to create your own repository.
 
-### 2. Install Dependencies
+### 2. Setup Node.js (First Time Only)
+
+#### Windows / macOS / Linux (Standard)
+
+Download and install from [nodejs.org](https://nodejs.org/) (LTS version recommended)
+
+#### WSL / Linux (Using nvm - Recommended)
+
+If you don't have Node.js installed:
+
+```bash
+# Install nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# Reload shell configuration
+source ~/.bashrc
+
+# Install Node.js LTS
+nvm install 20
+nvm use 20
+
+# Verify installation
+node --version
+npm --version
+```
+
+### 3. Install Dependencies
 
 ```bash
 cd dev
 npm install
 ```
 
-### 3. Start Development
+### 4. Start Development
 
 ```bash
 # Watch mode - automatically compiles on save
 npm run dev
+
+# Or one-time build
+npm run build
+
+# Format code with Prettier
+npm run format
+
+# Lint code with ESLint
+npm run lint
 ```
 
 This will compile TypeScript files from `dev/src/scripts/` to JavaScript in the `scripts/` folder.
 
-### 4. Open the Workspace
+### 5. Open the Workspace
 
 **From Command Line:**
 
@@ -71,11 +107,11 @@ cursor ts_addon_template.code-workspace
 **From File Explorer:**
 Double-click `ts_addon_template.code-workspace`
 
-### 5. Test in CS2
+### 6. Test in CS2
 
 1. Copy this addon folder to your CS2 content directory:
 
-   ```
+   ```text
    C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\content\csgo_addons\
    ```
 
@@ -87,13 +123,14 @@ Double-click `ts_addon_template.code-workspace`
    - **Script File:** `scripts/example.js`
 
 4. Launch CS2 with tools mode:
+
    ```batch
    cs2.exe -tools +map your_map_name
    ```
 
 ## 📁 Project Structure
 
-```
+```text
 ts_addon_template/
 ├── dev/                          # Development source code
 │   ├── src/
@@ -194,7 +231,7 @@ Instance.OnReload((memory) => {
 
 ### Critical Rules
 
-#### ❌ NEVER:
+#### ❌ NEVER
 
 - Store entity references directly (they become invalid on hot reload)
 - Use `OnGameEvent` (removed in Sept 2025 update)
@@ -202,7 +239,7 @@ Instance.OnReload((memory) => {
 - Forget to clear `SetNextThink` in `OnBeforeReload`
 - Reference `.ts` files in Hammer (always use `.js`)
 
-#### ✅ ALWAYS:
+#### ✅ ALWAYS
 
 - Store entity names as strings, refetch with `FindEntityByName`
 - Check `entity.IsValid()` before every operation
@@ -418,8 +455,8 @@ Free to use, modify, and distribute for any purpose.
 
 ### Community
 
-- [CS2 Modding Discord](#) - Share your projects
-- [Steam Workshop](#) - Publish your addons
+- CS2 Modding Discord - Share your projects (link TBD)
+- Steam Workshop - Publish your addons (link TBD)
 
 ## 🎉 Getting Started
 
@@ -435,6 +472,6 @@ Free to use, modify, and distribute for any purpose.
 
 ---
 
-**Happy scripting! 🚀**
+### Happy scripting! 🚀
 
 Made with ❤️ for the CS2 modding community
