@@ -25,11 +25,6 @@ A modern, production-ready template for creating Counter-Strike 2 addons with Ty
 - **Counter-Strike 2** installed via Steam
 - **CS2 Workshop Tools** (free DLC on Steam)
 
-### Recommended
-
-- **VS Code** or **Cursor IDE** for the best development experience
-- Basic TypeScript knowledge
-
 ## 🚀 Quick Start
 
 ### 1. Clone or Download This Template
@@ -94,16 +89,6 @@ This will compile TypeScript files from `dev/src/scripts/` to JavaScript in the 
 
 ### 5. Open the Workspace
 
-**From Command Line:**
-
-```bash
-# With VS Code
-code ts_addon_template.code-workspace
-
-# With Cursor
-cursor ts_addon_template.code-workspace
-```
-
 **From File Explorer:**
 Double-click `ts_addon_template.code-workspace`
 
@@ -142,10 +127,6 @@ ts_addon_template/
 │   └── tsconfig.json             # TypeScript configuration
 ├── scripts/                      # Compiled JavaScript (auto-generated)
 ├── maps/                         # Your .vmap files
-├── .cursor/
-│   └── rules/
-│       └── cs2-dev.mdc           # Cursor IDE rules for AI assistance
-├── LLM_INSTRUCTIONS.txt          # Instructions for AI code assistants
 ├── ts_addon_template.code-workspace  # Multi-root workspace config
 ├── README.md                     # This file
 ├── LICENSE                       # MIT License
@@ -288,18 +269,6 @@ Instance.OnReload((memory) => {
 });
 ```
 
-## 🎨 VS Code / Cursor Features
-
-This template is optimized for VS Code and Cursor IDE:
-
-### Pre-configured Settings
-
-- ✅ Auto-format on save (Prettier)
-- ✅ TypeScript IntelliSense
-- ✅ Organize imports on save
-- ✅ File type associations (`.vscript` → JavaScript)
-- ✅ Optimized search (excludes `node_modules`)
-
 ### Build Tasks
 
 - Press `Ctrl+Shift+B` (or `Cmd+Shift+B` on Mac)
@@ -312,19 +281,6 @@ The workspace will prompt you to install:
 - **Prettier** - Code formatting
 - **ESLint** - TypeScript linting
 - **Error Lens** - Inline error display
-
-### AI Assistance (Cursor IDE)
-
-- The `.cursor/rules/cs2-dev.mdc` file provides AI context for Cursor IDE
-- Multi-root workspace gives AI full project context
-- Type definitions provide excellent context for autocomplete and AI assistance
-
-The AI will understand:
-
-- CS2 API patterns and best practices
-- Hot reload state management
-- Entity validation requirements
-- Event handler usage
 
 ## 📖 Example Use Cases
 
@@ -451,7 +407,6 @@ Free to use, modify, and distribute for any purpose.
 
 - [Type Definitions](dev/src/types/cs_script.d.ts) - Full CS2 API with comments
 - [Example Script](dev/src/scripts/example.ts) - Comprehensive example
-- [Cursor Rules](.cursor/rules/cs2-dev.mdc) - AI development guidelines
 
 ### Community
 
